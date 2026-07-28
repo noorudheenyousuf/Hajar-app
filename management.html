@@ -1,0 +1,255 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+
+    <!-- PWA Meta Tags -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d631b">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Management </title>
+<!-- Google Fonts: Geist for the modern corporate feel -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "outline": "#707a6c",
+                    "background": "#f3faff",
+                    "outline-variant": "#bfcaba",
+                    "on-primary-container": "#cbffc2",
+                    "surface-container": "#dbf1fe",
+                    "surface-container-highest": "#cfe6f2",
+                    "on-primary-fixed": "#002204",
+                    "secondary-fixed": "#bdefbe",
+                    "on-secondary-fixed-variant": "#24502c",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f3faff",
+                    "on-tertiary-fixed": "#07200e",
+                    "inverse-surface": "#1e333c",
+                    "primary-container": "#0d631b",
+                    "on-surface-variant": "#40493d",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#334d37",
+                    "tertiary-fixed-dim": "#b1ceb2",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#bdefbe",
+                    "inverse-on-surface": "#dff4ff",
+                    "primary-fixed": "#a3f69c",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#c7dde9",
+                    "on-background": "#071e27",
+                    "on-primary-fixed-variant": "#005312",
+                    "surface-container-low": "#e6f6ff",
+                    "secondary-fixed-dim": "#a2d3a4",
+                    "on-secondary-fixed": "#002109",
+                    "surface-variant": "#cfe6f2",
+                    "surface-bright": "#f3faff",
+                    "secondary": "#3c6842",
+                    "primary-fixed-dim": "#88d982",
+                    "error-container": "#ffdad6",
+                    "primary": "#0d631b",
+                    "on-tertiary-container": "#daf9db",
+                    "on-error": "#ffffff",
+                    "on-surface": "#071e27",
+                    "inverse-primary": "#88d982",
+                    "tertiary-fixed": "#cceacd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#d5ecf8",
+                    "surface-tint": "#1b6d24",
+                    "on-secondary-container": "#426e47",
+                    "tertiary": "#415b45"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1rem",
+                    "touch-target-min": "48px",
+                    "container-padding": "1.25rem",
+                    "stack-gap": "1rem",
+                    "section-margin": "2rem"
+            },
+            "fontFamily": {
+                    "label-caps": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "stat-number": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "stat-number": ["28px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f3faff;
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            background-color: rgba(243, 250, 255, 0.85);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="glass-header w-full top-0 sticky z-50 transition-colors">
+<div class="flex items-center justify-between px-gutter py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95">
+                    menu
+                </button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Administration</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95">
+                    settings
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female school administrator with a warm smile, wearing a modern navy blazer. The background is a brightly lit, clean school corridor with soft out-of-focus highlights. The lighting is soft and natural, reflecting a high-quality Light Mode aesthetic consistent with a premium academic application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzQ6SSRy7z4R4frGaZpdJ8PnuT3yqcW_y2HKJc4tZUX5P_YL2gVHK4L30Mi7-7cH6mZAeLHph9jX8bNMfPO098bVPnYoBaZ6RTbelWLn0vTk77i7Yq2Y_UfDaJPRVreyt2zTjtGQGjCq68Gn0F5tIM1o8LVfF_yJbpA3MNEqt2W_pL41ubL8GPY6isgcMFjqfPIWt933N9LEsOp2j3xsJPeHYgsYZ_6nBVUrC6-fW5m-zB0wX0ZUp3uQCFxAHsRyow6YZqJhMuVfo">
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-padding py-stack-gap">
+<!-- Animated Background Element (Subtle) -->
+<div class="relative w-full h-32 mb-8 rounded-xl overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-transparent to-surface-container-low"></div>
+<div class="relative z-10 flex flex-col justify-center h-full px-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Academic Overview</h2>
+<p class="font-body-md text-on-surface-variant">Manage your institution's core data from one central hub.</p>
+</div>
+</div>
+<!-- Management Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-gap mb-section-margin"><!-- Students Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0px_2px_8px_rgba(69,90,100,0.08)] border-l-4 border-primary hover:scale-[1.01] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full text-primary">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<span class="font-stat-number text-stat-number text-primary">1,284</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Students</h3>
+<p class="font-body-md text-on-surface-variant">Total active enrollment for the 2023-24 academic session.</p>
+<a href="students-list.html" class="mt-4 w-full bg-primary text-on-primary px-4 py-2 rounded-xl font-label-caps text-label-caps flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-md"><span class="material-symbols-outlined text-[20px]">add</span>Edit Students</a></div>
+<!-- Subjects Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0px_2px_8px_rgba(69,90,100,0.08)] border-l-4 border-primary hover:scale-[1.01] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full text-primary">
+<span class="material-symbols-outlined text-2xl">book</span>
+</div>
+<span class="font-stat-number text-stat-number text-primary">42</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Subjects</h3>
+<p class="font-body-md text-on-surface-variant">Curriculum items and specialized course modules.</p>
+<button class="mt-4 w-full bg-primary text-on-primary px-4 py-2 rounded-xl font-label-caps text-label-caps flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-md"><span class="material-symbols-outlined text-[20px]">add</span>Add Subject</button></div>
+<!-- Classes Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0px_2px_8px_rgba(69,90,100,0.08)] border-l-4 border-primary hover:scale-[1.01] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full text-primary">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+<span class="font-stat-number text-stat-number text-primary">56</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Classes</h3>
+<p class="font-body-md text-on-surface-variant">Active classroom sections and learning groups.</p>
+<button class="mt-4 w-full bg-primary text-on-primary px-4 py-2 rounded-xl font-label-caps text-label-caps flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-md"><span class="material-symbols-outlined text-[20px]">add</span>Add Class</button></div>
+<!-- Teachers Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0px_2px_8px_rgba(69,90,100,0.08)] border-l-4 border-primary hover:scale-[1.01] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full text-primary">
+<span class="material-symbols-outlined text-2xl">person</span>
+</div>
+<span class="font-stat-number text-stat-number text-primary">86</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Teachers</h3>
+<p class="font-body-md text-on-surface-variant">Qualified faculty members across all departments.</p>
+<button class="mt-4 w-full bg-primary text-on-primary px-4 py-2 rounded-xl font-label-caps text-label-caps flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-md"><span class="material-symbols-outlined text-[20px]">add</span>Add Teacher</button></div></div>
+<!-- Data Utility Section -->
+<section class="mt-12 bg-surface-container-lowest rounded-[24px] p-8 border-l-4 border-error shadow-[0px_2px_8px_rgba(69,90,100,0.08)] overflow-hidden relative">
+<div class="absolute -right-12 -top-12 opacity-5">
+<span class="material-symbols-outlined text-error text-[180px]">warning</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-error-container rounded-full text-error">
+<span class="material-symbols-outlined">database</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background">Data Utility</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                    Administrative reset tools allow you to purge specific datasets or perform a full system factory reset. This action is irreversible and will remove all student history, teacher logs, and attendance records.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">delete_forever</span>
+                        Clear All Data
+                    </button>
+<button class="bg-surface-container-low text-primary px-8 py-4 rounded-full font-label-caps text-label-caps border border-primary/20 hover:bg-surface-container transition-all active:scale-95">
+                        Backup Records
+                    </button>
+</div>
+</div>
+</section>
+<!-- Illustration placeholder -->
+<div class="mt-section-margin flex justify-center">
+<div class="w-full max-w-md h-64 rounded-[24px] overflow-hidden bg-surface-container-low flex items-center justify-center p-8">
+<img class="w-full h-full object-contain" data-alt="A minimalist, professional illustration of interconnected geometric shapes and abstract school supplies like a stylized compass and book, in a palette of deep indigo, soft mint green, and white. The style is clean vector art with soft gradients and subtle drop shadows, conveying organized intelligence and administrative clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBDbSlCdsf6zKK8SvQO0B2zCYVfEgtyPYKwudmq8GlyUaPX7vfIfOzcnV4RiKbOKnaRc-aGCBuJpVLtxTgpAPRcQL2haXTsm1G4DRUZoJZRgZ4u_n7-DfiDPrTk_kc9-HXuVWmhCPYHBw7PacmUaoHZ-cUPHy82PuJm2gYz-d0GmqKYrbEIw4yzpotv2Z008MlVHXfCAUBSAuZ7vMk6Gpgj_BsMO8tmaKzvjzU9JsujJTTO-ACokb8C-YhvdCPqTGwKgw_hKjxaMM">
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<div id="nav-container" class="fixed bottom-0 w-full z-50 mb-0 text-xs font-bold h-27 "></div>
+
+<script src="script/components/navbar.js"></script>
+
+<script>
+        // Toggle Management active state (Visual demo)
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                navItems.forEach(i => {
+                    i.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'px-8');
+                    i.classList.add('text-on-surface-variant', 'px-6');
+                });
+                item.classList.remove('text-on-surface-variant', 'px-6');
+                item.classList.add('bg-secondary-container', 'text-on-secondary-container', 'px-8');
+            });
+        });
+    </script>
+</body></html>

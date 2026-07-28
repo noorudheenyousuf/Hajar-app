@@ -1,0 +1,306 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+
+  <!-- PWA Meta Tags -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d631b">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Registry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#cceacd",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#bdefbe",
+                      "surface-variant": "#cfe6f2",
+                      "on-secondary-container": "#426e47",
+                      "tertiary-container": "#59745c",
+                      "surface-container-highest": "#cfe6f2",
+                      "primary-fixed-dim": "#88d982",
+                      "inverse-primary": "#88d982",
+                      "secondary-container": "#bdefbe",
+                      "on-surface": "#071e27",
+                      "on-tertiary-fixed": "#07200e",
+                      "primary-fixed": "#a3f69c",
+                      "on-primary-fixed-variant": "#005312",
+                      "primary-container": "#2e7d32",
+                      "surface-bright": "#f3faff",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#40493d",
+                      "background": "#f3faff",
+                      "surface": "#f3faff",
+                      "on-background": "#071e27",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed": "#002109",
+                      "on-tertiary-container": "#daf9db",
+                      "surface-dim": "#c7dde9",
+                      "inverse-on-surface": "#dff4ff",
+                      "inverse-surface": "#1e333c",
+                      "on-primary-container": "#cbffc2",
+                      "tertiary": "#415b45",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#002204",
+                      "on-tertiary-fixed-variant": "#334d37",
+                      "on-secondary-fixed-variant": "#24502c",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#bfcaba",
+                      "surface-container-low": "#e6f6ff",
+                      "tertiary-fixed-dim": "#b1ceb2",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#a2d3a4",
+                      "surface-container-high": "#d5ecf8",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#3c6842",
+                      "surface-tint": "#1b6d24",
+                      "outline": "#707a6c",
+                      "primary": "#0d631b",
+                      "surface-container": "#dbf1fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "xl": "32px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "container-padding-mobile": "16px",
+                      "container-padding-desktop": "40px",
+                      "gutter": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "title-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .attendance-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .attendance-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background: rgba(243, 250, 255, 0.85);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-40 glass-header">
+<div class="flex items-center justify-between px-md py-sm w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Attendance Manager</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-sm bg-surface-container-low px-md py-xs rounded-full">
+<span class="material-symbols-outlined text-primary text-body-lg">calendar_today</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Monday, Oct 23</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling female teacher in her late 30s, dressed in business casual attire. The background is a brightly lit, soft-focus modern classroom with plants and bookshelves. The lighting is warm and encouraging, using a soft primary green and white palette to maintain a clean academic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSWVic3B3mtggln-0Pk3f-TSf5RLQAG8xCAUqlfqkqqQdp9OuqOLWQ2s-b08rs4G1vXNIudn_-NEOdbOyeddsaLiFKwGhY7AbOuwWwUYOEjYQMCiOM_9fIHkJplKpgtjnDraNVKJnZ7xEIkcj8ov_e0CfmBHeMhSRnJSoY-ar3mjL1tNoKTbzo0ITUM56KhNwwUaF43kbmAOdKIudMOmpPHTCjGxZsZn7UA071DDVFDVYI0kAaGEZmGzkKV1fmSn1-0mxXSqX4Z1s">
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop pb-32">
+<!-- Attendance Info Header -->
+<section class="py-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div><div class="flex flex-col gap-sm">
+<div class="flex flex-wrap items-center gap-md bg-surface-container-lowest/60 backdrop-blur-md border border-white/40 p-xs rounded-full shadow-sm">
+<div class="flex items-center gap-sm pl-md pr-sm py-xs border-outline-variant/30">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter leading-none">Class</span>
+<button class="flex items-center gap-xs group">
+<span class="font-title-lg text-body-md font-bold text-on-surface">BS-1</span>
+<span class="material-symbols-outlined text-primary text-[18px] transition-transform group-hover:translate-y-0.5">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-sm pl-sm pr-md py-xs border-r border-outline-variant/30">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter leading-none">Subject</span>
+<button class="flex items-center gap-xs group">
+<span class="font-title-lg text-body-md font-bold text-on-surface">FIQH</span>
+<span class="material-symbols-outlined text-primary text-[18px] transition-transform group-hover:translate-y-0.5">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-sm pl-sm pr-md py-xs">
+  <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+    <span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+  </div>
+  <div class="flex flex-col">
+    <span class="text-[10px] font-bold text-primary/60 uppercase tracking-tighter leading-none">Date</span>
+    <button class="flex items-center gap-xs group">
+      <span class="font-title-lg text-body-md font-bold text-on-surface">23 July 2026</span>
+      <span class="material-symbols-outlined text-primary text-[18px] transition-transform group-hover:translate-y-0.5">expand_more</span>
+    </button>
+  </div>
+</div></div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-body-md text-body-md">09:00 AM - 10:30 AM</span>
+</div>
+</div></div>
+<div class="flex flex-wrap md:flex-nowrap items-center gap-md w-full md:w-auto">
+<!-- Present Card -->
+<div class="flex-1 md:w-32 bg-surface-container-low p-md rounded-xl border border-outline-variant/30 flex flex-col items-center gap-xs shadow-sm">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="text-label-lg font-label-lg uppercase tracking-wider">Present</span>
+</div>
+<p class="js-present-summary text-headline-md font-headline-md text-primary">26</p>
+</div>
+<!-- Absent Card -->
+<div class="flex-1 md:w-32 bg-surface-container-low p-md rounded-xl border border-outline-variant/30 flex flex-col items-center gap-xs shadow-sm">
+<div class="flex items-center gap-xs text-error">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">cancel</span>
+<span class="text-label-lg font-label-lg uppercase tracking-wider">Absent</span>
+</div>
+<p class="js-absent-summary text-headline-md font-headline-md text-error">0</p>
+</div>
+<!-- Total Card -->
+<div class="flex-1 md:w-32 bg-surface-container-low p-md rounded-xl border border-outline-variant/30 flex flex-col items-center gap-xs shadow-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">group</span>
+<span class=" text-label-lg font-label-lg uppercase tracking-wider">Total</span>
+</div>
+<p class="js-total-summary text-headline-md font-headline-md text-on-surface">26</p>
+</div>
+</div>
+</section>
+<!-- Search and Filter -->
+<div class="mb-lg flex gap-md">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container-lowest border border-outline rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="  Search student name or ID..." type="text">
+</div>
+<button class="bg-surface-container-high px-md py-sm rounded-xl flex items-center gap-xs text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-label-lg text-label-lg">Filter</span>
+</button>
+</div>
+<!-- Attendance Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Student Card 1 -->
+<div class="js-student-card    flex flex-col gap-md  border-primary transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A portrait of a teenage boy student with short dark hair, wearing a clean white school polo shirt. He is smiling slightly toward the camera against a soft, light-blue studio background. The lighting is bright and even, highlighting a clean and organized academic persona consistent with a modern student portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcQjn17JP-WSY24SlqJ7g0vh8hM_Mm3ogkCxJJTK4i3QuVNg5Bd4Z1bMtcQaI2tR4MJ5B24clvb9S8UQhJX5wphu5lW4u7ipdTcTnk7jdSGjHyHiCWBbi0xKcBXoFnTS0jfg3DAcuP3MB4xjVDTB-LKNOmTVs9OSycUKGdgA-6oDkJswaCvUrxN6qUl5RcqNPD99lzRBmwoN2KTBpH-c8RObRg116MDhHTGR7_mWv5cvlg0xd7eaEnFlo-66WhDJ5A7R7Xe22lys8">
+</div>
+<div class="flex-1">
+<h3 class="font-title-lg text-title-lg text-on-surface">Alex Thompson</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">ID: 2023-0145</p><p class="font-body-md text-body-md text-on-surface-variant">Roll No: 01</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-sm py-xs rounded-full text-label-md font-label-md">Present</span>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 py-sm px-md rounded-full bg-primary-container text-on-primary-container flex items-center justify-center gap-xs font-label-lg text-label-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Present
+                    </button>
+<button class="flex-1 py-sm px-md rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center gap-xs font-label-lg text-label-lg hover:bg-error-container hover:text-on-error-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        Absent
+                    </button>
+</div>
+</div>
+
+</section>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Progress Bar Overlay (Subtle) -->
+<div class="w-full h-1 bg-surface-container">
+<div class="w-full h-full bg-primary-container transition-all duration-500"></div>
+</div>
+<div class="bg-surface-container-highest dark:bg-surface-container-highest shadow-[0px_-4px_16px_rgba(69,90,100,0.12)] px-container-padding-mobile py-lg md:px-container-padding-desktop">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="bg-secondary-container p-sm rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase">Current Status</p>
+<p class="font-title-lg text-title-lg text-on-surface">26 of 26 marked</p>
+</div>
+</div>
+<div class="flex w-full md:w-auto gap-md">
+<button class="flex-1 md:flex-none px-xl py-md rounded-full bg-surface-container-low text-primary font-label-lg text-label-lg hover:bg-surface-container transition-colors active:scale-95">
+                        Save Draft
+                    </button>
+<button class="flex-1 md:flex-none px-xl py-md rounded-full bg-primary text-on-primary font-title-lg text-title-lg flex items-center justify-center gap-sm shadow-md hover:shadow-lg transition-all active:scale-95">
+                        Submit Attendance
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Bar (Shared Component Reference) -->
+ <div id="nav-container" ></div>
+
+
+
+<script src="script/components/navbar.js"></script>
+<script src="script/registry.js"></script>
+</body></html>
