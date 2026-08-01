@@ -2,7 +2,7 @@
   "name": "Attendance Manager",
   "short_name": "Attendance",
   "description": "Student Attendance Management System",
-  "start_url": "registry.html",
+  "start_url": "../registry.html",
   "display": "standalone",
   "background_color": "#f3faff",
   "theme_color": "#0d631b",
