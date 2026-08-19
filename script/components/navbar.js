@@ -6,7 +6,7 @@ const navbarHTML = `
     <span class="font-label-lg text-label-lg px-2 py-1">Dashboard</span>
     </a>
 
-    <a href="registry.html" class="flex flex-col items-center justify-center text-on-surface-variant text-on-secondary-container rounded-full p-4 cursor-pointer active:scale-90 transition-all duration-200">
+    <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant text-on-secondary-container rounded-full p-4 cursor-pointer active:scale-90 transition-all duration-200">
     <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">how_to_reg</span>
     <span class="font-label-lg text-label-lg px-2 py-1">Registry</span>
     </a>
